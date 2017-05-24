@@ -20,7 +20,9 @@
         }
 
         /***************************************************************************************************************
-        *   Creates a new game instance.
+        *   Being invoked every time the panel is repainted.
+        *
+        *   @param g The drawing context.
         ***************************************************************************************************************/
         public void paint(Graphics g)
         {
