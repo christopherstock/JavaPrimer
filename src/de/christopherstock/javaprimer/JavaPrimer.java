@@ -1,7 +1,7 @@
 
     package de.christopherstock.javaprimer;
 
-    import  de.christopherstock.javaprimer.game.JavaPrimerGame;
+    import  de.christopherstock.javaprimer.game.*;
 
     /*******************************************************************************************************************
     *   The main class of the Java Primer Project.

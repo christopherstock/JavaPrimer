@@ -1,10 +1,9 @@
 
     package de.christopherstock.javaprimer.game;
 
-    import  javax.swing.JFrame;
-import  javax.swing.WindowConstants;
-
-import de.christopherstock.javaprimer.JavaPrimer;
+    import  de.christopherstock.javaprimer.*;
+    import  de.christopherstock.javaprimer.ui.*;
+    import  javax.swing.*;
 
     /*******************************************************************************************************************
     *   The game class.
@@ -16,6 +15,9 @@ import de.christopherstock.javaprimer.JavaPrimer;
     {
         /** The frame that displays the game. */
         private                 JFrame                  frame               = null;
+
+        /** The panel that represents our drawing context. */
+        private                 JavaPrimerPanel         panel               = null;
 
         /***************************************************************************************************************
         *   Creates a new game instance.
@@ -30,6 +32,7 @@ import de.christopherstock.javaprimer.JavaPrimer;
         public void init()
         {
             this.initFrame();
+            this.initPanel();
         }
 
         /***************************************************************************************************************
@@ -45,5 +48,15 @@ import de.christopherstock.javaprimer.JavaPrimer;
             this.frame.setLocation(100, 100);
 
             this.frame.setVisible(true);
+        }
+
+        /***************************************************************************************************************
+        *   Initializes the panel that represents our drawing context.
+        ***************************************************************************************************************/
+        private void initPanel()
+        {
+            this.panel = new JavaPrimerPanel();
+
+            this.frame.add(this.panel);
         }
     }
