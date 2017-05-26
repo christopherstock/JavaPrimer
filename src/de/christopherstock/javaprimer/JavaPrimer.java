@@ -1,7 +1,7 @@
 
     package de.christopherstock.javaprimer;
 
-    import  de.christopherstock.javaprimer.game.*;
+    import  de.christopherstock.javaprimer.demo.*;
 
     /*******************************************************************************************************************
     *   The main class of the Java Primer Project.
@@ -14,8 +14,8 @@
         /** The application title. */
         public      static  final   String                  TITLE           = "JavaPrimer, (c) 2017 Mayflower GmbH";
 
-        /** The singleton instance of our game class. */
-        private     static          JavaPrimerGame          game            = null;
+        /** The singleton instance of our demo class. */
+        public      static          JavaPrimerDemo          demo            = null;
 
         /***************************************************************************************************************
         *   The main method that acts as the application's entry point.
@@ -26,7 +26,7 @@
         {
             System.out.println("Welcome to [" + JavaPrimer.TITLE + "]");
 
-            JavaPrimer.game = new JavaPrimerGame();
-            JavaPrimer.game.init();
+            JavaPrimer.demo = new JavaPrimerDemo();
+            JavaPrimer.demo.init();
         }
     }

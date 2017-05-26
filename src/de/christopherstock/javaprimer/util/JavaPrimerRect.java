@@ -12,15 +12,15 @@
     public class JavaPrimerRect
     {
         /** The position x of the left edge. */
-        private                 int         x                           = 0;
+        public                  int         x                           = 0;
         /** The position y of the top edge. */
-        private                 int         y                           = 0;
+        public                  int         y                           = 0;
         /** The width of the rectangle. */
-        private                 int         width                       = 0;
+        public                  int         width                       = 0;
         /** The height of the rectangle. */
-        private                 int         height                      = 0;
+        public                  int         height                      = 0;
         /** The fill color. */
-        private                 Color       color                       = null;
+        public                  Color       color                       = null;
 
         /***************************************************************************************************************
         *   Creates a new rectangle in 2D space.

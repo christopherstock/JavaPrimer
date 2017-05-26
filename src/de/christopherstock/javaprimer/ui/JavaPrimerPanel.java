@@ -1,6 +1,7 @@
 
     package de.christopherstock.javaprimer.ui;
 
+    import  de.christopherstock.javaprimer.*;
     import  java.awt.*;
     import  javax.swing.*;
 
@@ -13,7 +14,7 @@
     public class JavaPrimerPanel extends JPanel
     {
         /***************************************************************************************************************
-        *   Creates a new game instance.
+        *   Creates a new panel.
         ***************************************************************************************************************/
         public JavaPrimerPanel()
         {
@@ -27,6 +28,8 @@
         public void paint(Graphics g)
         {
             super.paint(g);
+
+            JavaPrimer.demo.draw(g);
 /*
             g.setColor(Color.RED);
             g.fillRect(10, 20, 100, 150);

@@ -1,5 +1,5 @@
 
-    package de.christopherstock.javaprimer.game;
+    package de.christopherstock.javaprimer.demo;
 
     import  de.christopherstock.javaprimer.*;
     import  de.christopherstock.javaprimer.ui.*;
@@ -8,31 +8,34 @@
     import  javax.swing.*;
 
     /*******************************************************************************************************************
-    *   The game class.
+    *   The demo class.
     *
     *   @author  Christopher Stock
     *   @version 1.0
     *******************************************************************************************************************/
-    public class JavaPrimerGame
+    public class JavaPrimerDemo
     {
-        /** The frame that displays the game. */
+        /** The frame that displays the demo. */
         private                 JFrame                  frame               = null;
 
         /** The panel that represents our drawing context. */
-        private                 JavaPrimerPanel         panel               = null;
+        public                  JavaPrimerPanel         panel               = null;
 
         /** All rects to animate. */
         private                 JavaPrimerRect[]        rects               = null;
 
+        /** The main thread. */
+        private                 JavaPrimerMainThread    mainThread          = null;
+
         /***************************************************************************************************************
-        *   Creates a new game instance.
+        *   Creates a new demo instance.
         ***************************************************************************************************************/
-        public JavaPrimerGame()
+        public JavaPrimerDemo()
         {
         }
 
         /***************************************************************************************************************
-        *   Initializes the game from scratch.
+        *   Initializes the demo from scratch.
         ***************************************************************************************************************/
         public void init()
         {
@@ -40,10 +43,11 @@
             this.initPanel();
 
             this.initRects();
+            this.initMainThread();
         }
 
         /***************************************************************************************************************
-        *   Initializes the frame that displays our game.
+        *   Initializes the frame that displays our demo.
         ***************************************************************************************************************/
         private void initFrame()
         {
@@ -79,5 +83,39 @@
                 new JavaPrimerRect(125, 25,  50, 70, Color.YELLOW),
                 new JavaPrimerRect(175, 180, 40, 35, Color.ORANGE),
             };
+        }
+
+        /***************************************************************************************************************
+        *   Initializes and starts the main thread.
+        ***************************************************************************************************************/
+        private void initMainThread()
+        {
+            this.mainThread = new JavaPrimerMainThread();
+            this.mainThread.start();
+        }
+
+        /***************************************************************************************************************
+        *   Renders the current demo scene.
+        ***************************************************************************************************************/
+        public void render()
+        {
+            for (JavaPrimerRect rect : this.rects)
+            {
+                rect.x += 1;
+                rect.y += 1;
+            }
+        }
+
+        /***************************************************************************************************************
+        *   Draws the current demo scene.
+        *
+        *   @param g The drawing context to draw onto.
+        ***************************************************************************************************************/
+        public void draw(Graphics g)
+        {
+            for (JavaPrimerRect rect : this.rects)
+            {
+                rect.draw(g);
+            }
         }
     }
