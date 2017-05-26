@@ -27,8 +27,9 @@
         public void paint(Graphics g)
         {
             super.paint(g);
-
+/*
             g.setColor(Color.RED);
             g.fillRect(10, 20, 100, 150);
+*/
         }
     }

@@ -3,6 +3,8 @@
 
     import  de.christopherstock.javaprimer.*;
     import  de.christopherstock.javaprimer.ui.*;
+    import  de.christopherstock.javaprimer.util.*;
+    import  java.awt.*;
     import  javax.swing.*;
 
     /*******************************************************************************************************************
@@ -19,6 +21,9 @@
         /** The panel that represents our drawing context. */
         private                 JavaPrimerPanel         panel               = null;
 
+        /** All rects to animate. */
+        private                 JavaPrimerRect[]        rects               = null;
+
         /***************************************************************************************************************
         *   Creates a new game instance.
         ***************************************************************************************************************/
@@ -33,6 +38,8 @@
         {
             this.initFrame();
             this.initPanel();
+
+            this.initRects();
         }
 
         /***************************************************************************************************************
@@ -58,5 +65,19 @@
             this.panel = new JavaPrimerPanel();
 
             this.frame.add(this.panel);
+        }
+
+        /***************************************************************************************************************
+        *   Initializes the rectangles that shall be animated and displayed later.
+        ***************************************************************************************************************/
+        private void initRects()
+        {
+            this.rects = new JavaPrimerRect[]
+            {
+                new JavaPrimerRect(15,  35,  75, 25, Color.BLUE  ),
+                new JavaPrimerRect(85,  70,  35, 80, Color.GREEN ),
+                new JavaPrimerRect(125, 25,  50, 70, Color.YELLOW),
+                new JavaPrimerRect(175, 180, 40, 35, Color.ORANGE),
+            };
         }
     }
