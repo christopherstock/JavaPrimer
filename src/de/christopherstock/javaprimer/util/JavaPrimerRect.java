@@ -5,9 +5,6 @@
 
     /*******************************************************************************************************************
     *   Represents a rectangle in 2D space.
-    *
-    *   @author  Christopher Stock
-    *   @version 1.0
     *******************************************************************************************************************/
     public class JavaPrimerRect
     {
@@ -16,11 +13,11 @@
         /** The position y of the top edge. */
         public                  int         y                           = 0;
         /** The width of the rectangle. */
-        public                  int         width                       = 0;
+        private                 int         width                       = 0;
         /** The height of the rectangle. */
-        public                  int         height                      = 0;
+        private                 int         height                      = 0;
         /** The fill color. */
-        public                  Color       color                       = null;
+        private                 Color       color                       = null;
 
         /***************************************************************************************************************
         *   Creates a new rectangle in 2D space.

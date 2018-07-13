@@ -9,9 +9,6 @@
 
     /*******************************************************************************************************************
     *   The demo class.
-    *
-    *   @author  Christopher Stock
-    *   @version 1.0
     *******************************************************************************************************************/
     public class JavaPrimerDemo
     {
@@ -19,7 +16,7 @@
         private                 JFrame                  frame               = null;
 
         /** The panel that represents our drawing context. */
-        public                  JavaPrimerPanel         panel               = null;
+        protected               JavaPrimerPanel         panel               = null;
 
         /** All rects to animate. */
         private                 JavaPrimerRect[]        rects               = null;
@@ -53,12 +50,12 @@
         {
             this.frame = new JFrame();
 
-            this.frame.setTitle(JavaPrimer.TITLE);
-            this.frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            this.frame.setSize(800, 600);
-            this.frame.setLocation(100, 100);
+            this.frame.setTitle( JavaPrimer.TITLE );
+            this.frame.setDefaultCloseOperation( WindowConstants.EXIT_ON_CLOSE );
+            this.frame.setSize( 800, 600 );
+            this.frame.setLocation( 100, 100 );
 
-            this.frame.setVisible(true);
+            this.frame.setVisible( true );
         }
 
         /***************************************************************************************************************
@@ -68,7 +65,7 @@
         {
             this.panel = new JavaPrimerPanel();
 
-            this.frame.add(this.panel);
+            this.frame.add( this.panel );
         }
 
         /***************************************************************************************************************
@@ -78,10 +75,10 @@
         {
             this.rects = new JavaPrimerRect[]
             {
-                new JavaPrimerRect(15,  35,  75, 25, Color.BLUE  ),
-                new JavaPrimerRect(85,  70,  35, 80, Color.GREEN ),
-                new JavaPrimerRect(125, 25,  50, 70, Color.YELLOW),
-                new JavaPrimerRect(175, 180, 40, 35, Color.ORANGE),
+                new JavaPrimerRect( 15,  35,  75, 25, Color.BLUE   ),
+                new JavaPrimerRect( 85,  70,  35, 80, Color.GREEN  ),
+                new JavaPrimerRect( 125, 25,  50, 70, Color.YELLOW ),
+                new JavaPrimerRect( 175, 180, 40, 35, Color.ORANGE ),
             };
         }
 
@@ -97,9 +94,9 @@
         /***************************************************************************************************************
         *   Renders the current demo scene.
         ***************************************************************************************************************/
-        public void render()
+        protected void render()
         {
-            for (JavaPrimerRect rect : this.rects)
+            for ( JavaPrimerRect rect : this.rects )
             {
                 rect.x += 1;
                 rect.y += 1;

@@ -5,9 +5,6 @@
 
     /*******************************************************************************************************************
     *   The main class of the Java Primer Project.
-    *
-    *   @author  Christopher Stock
-    *   @version 1.0
     *******************************************************************************************************************/
     public class JavaPrimer
     {
@@ -22,9 +19,9 @@
         *
         *   @param args The command line arguments being passed to the java application.
         ***************************************************************************************************************/
-        public static final void main(String[] args)
+        public static void main(String[] args)
         {
-            System.out.println("Welcome to [" + JavaPrimer.TITLE + "]");
+            System.out.println( "Welcome to [" + JavaPrimer.TITLE + "]" );
 
             JavaPrimer.demo = new JavaPrimerDemo();
             JavaPrimer.demo.init();
